@@ -1,10 +1,14 @@
-def encode(nums):
-  new_string = ''
-  for num in nums:
-    new_string += (int(num) + 3)%10
-  return new_string
+def encode(password):
+    enc = ''
+    for i in range(len(password)):
+        enc += str(int(password[i])+3)
+    return enc
 
-
+def decode(nums):
+  dec = ''
+  for i in range(len(password)):
+      dec += str(int(password[i])-3)
+  return dec
 
 while True:
     print("Menu")
@@ -16,10 +20,10 @@ while True:
     option = int(input("Please enter an option: "))
     if option == 1:
       password = input("Enter password to be encoded: ")
-      print("Your encoded password is", encode(password))
+      print(f"Your encoded password is {encode(password)}\n")
     elif option == 2:
       print("Return decoded password")
     elif option == 3:
-      break
+      print(f"The encoded password is {encode(password)}, and the original password is {decode(password)}.")
     else:
       print("Invalid option")
